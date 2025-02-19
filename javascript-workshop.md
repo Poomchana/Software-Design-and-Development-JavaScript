@@ -77,7 +77,75 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 ### บันทึกผลการทดลอง 
 ```html
 [บันทึกโค้ด ที่นี่]
-```
+```<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ทดลอง JavaScript</title>
+</head>
+<body>
+    <!-- Inline JavaScript -->
+    <button onclick="alert('นายภูมิชนะ เทียมแก้ว')">แสดงรายชื่อนักศึกษา</button>
+
+    <!-- ทดสอบ Internal JavaScript -->
+    <button id="btn2">แสดงวันที่ปัจจุบัน</button>
+
+    <!-- ทดสอบ External JavaScript -->
+    <button id="btn3" onclick="hello3();">แสดงเวลาปัจจุบัน</button>
+
+    <!-- Internal JavaScript -->
+    <script>
+        document.getElementById('btn2').onclick = function() {
+            const now = new Date();
+            const dateString = now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
+            alert('วันที่'  + dateString);
+        };
+    </script>
+
+    <!-- External JavaScript -->
+  <!-- ต้องสร้างไฟล์ script.js มีโค้ดโปรแกรมในไฟล์ดังนี้
+   function hello3(){
+    alert('คลิกปุ่มที่ 3!');
+    }
+ -->
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ทดลอง JavaScript</title>
+</head>
+<body>
+    <br>
+    <br>
+    <!-- ช่องกรอกข้อความสำหรับชื่อ -->
+    <label for="nameInput">กรุณากรอกชื่อ: </label>
+    <input type="text" id="nameInput" placeholder="กรอกชื่อของคุณ">
+
+    <!-- ปุ่มแสดงข้อความ -->
+    <button onclick="showMessage()">แสดงข้อความ</button>
+
+    <!-- ช่องแสดงข้อความที่กรอก -->
+    <p id="displayMessage"></p>
+
+    <script>
+        // ฟังก์ชันสำหรับแสดงข้อความที่กรอก
+        function showMessage() {
+            // ดึงข้อมูลจากช่องกรอกข้อความ
+            var name = document.getElementById('nameInput').value;
+
+            // แสดงข้อความที่กรอกใน <p> tag
+            document.getElementById('displayMessage').textContent = "ชื่อของคุณ: " + name;
+        }
+    </script>
+</body>
+</html>
+
+
 [รูปผลการทดลองที่ 1]
   
 ## การทดลองที่ 2: พื้นฐาน JavaScript
