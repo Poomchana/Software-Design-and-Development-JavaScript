@@ -129,16 +129,12 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
     <!-- ปุ่มแสดงข้อความ -->
     <button onclick="showMessage()">แสดงข้อความ</button>
 
-    <!-- ช่องแสดงข้อความที่กรอก -->
     <p id="displayMessage"></p>
 
     <script>
-        // ฟังก์ชันสำหรับแสดงข้อความที่กรอก
         function showMessage() {
-            // ดึงข้อมูลจากช่องกรอกข้อความ
             var name = document.getElementById('nameInput').value;
 
-            // แสดงข้อความที่กรอกใน <p> tag
             document.getElementById('displayMessage').textContent = "ชื่อของคุณ: " + name;
         }
     </script>
@@ -147,7 +143,8 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 ```
 
 [รูปผลการทดลองที่ 1]
-  
+  ![image](https://github.com/user-attachments/assets/10a60d52-6943-4fa0-a5b2-7ef8351823f3)
+
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
 
