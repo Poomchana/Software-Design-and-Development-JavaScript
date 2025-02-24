@@ -77,7 +77,7 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 ### บันทึกผลการทดลอง 
 ```html
 [บันทึกโค้ด ที่นี่]
-```
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -118,7 +118,7 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
     <script src="ทดลอง1.js"></script>
 </body>
 </html>
-```
+
  JavaScript
 function hello3() {
     const now = new Date();
