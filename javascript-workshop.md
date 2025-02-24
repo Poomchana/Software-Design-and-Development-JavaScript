@@ -189,8 +189,60 @@ let person = {
 ### บันทึกผลการทดลอง 2.1
 ```html
 [บันทึกโค้ด ที่นี่]
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลนักศึกษา</title>
+</head>
+<body>
+    <h2>ข้อมูลนักศึกษา</h2>
+    <p id="studentInfo"></p>
+
+
+    <script>
+        let studentID = "67030180";
+        let studentName = "Poomchana Tiamkeaw";
+        let midtermScore = 80;
+        let finalScore = 100;
+        let isStudent = true;
+        let student = {
+            studentID: "67030180",
+            studentName: "Poomchana Tiamkeaw",
+            major: "เทคโนโลยีคอมพิวเตอร์",
+            gpa: 4.00,
+            isStudent: true
+        };
+        // แสดงข้อมูลใน HTML
+        document.getElementById("studentInfo").innerHTML = `
+            <strong>รหัสนักศึกษา:</strong> ${student.studentID} <br>
+            <strong>ชื่อ:</strong> ${student.studentName} <br>
+            <strong>สาขา:</strong> ${student.major} <br>
+            <strong>เกรดเฉลี่ย:</strong> ${student.gpa} <br>
+        `;
+    </script>
+     <script src="test2.js"></script>
+</body>
+</html>
+
+let studentID = "67030180";
+let studentName = "ภูมิชนะ เทียมแก้ว";
+let midtermScore = 80;
+let finalScore = 100;
+let isStudent = true;
+
+let student = {
+    studentID: "67030180",
+    name: "ภูมิชนะ เทียมแก้ว",
+    major: "เทคโนโลยีคอมพิวเตอร์",
+    gpa: 4.00,
+    isStudent: true
+};
 ```
 [รูปผลการทดลองที่ 2.1]
+![image](https://github.com/user-attachments/assets/6f134ac4-80f6-4f15-9ef5-df6316613507)
 
 
 ### 2.2 การดำเนินการทางคณิตศาสตร์
@@ -243,8 +295,67 @@ number /= 2;          // เท่ากับ number = number / 2
 ### บันทึกผลการทดลอง 2.2
 ```html
 [บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนวณคะแนนเฉลี่ย & คำนวณราคาสินค้ารวม</title>
+</head>
+<body>
+    <h2>คำนวณคะแนนเฉลี่ย</h2>
+    <label>คะแนนวิชา 1: <input type="number" id="score1"></label><br>
+    <label>คะแนนวิชา 2: <input type="number" id="score2"></label><br>
+    <label>คะแนนวิชา 3: <input type="number" id="score3"></label><br>
+    <button onclick="calculateAverage()">คำนวณ</button>
+
+    <h3 id="result"></h3>
+
+    <h2>คำนวณราคาสินค้ารวม VAT 7%</h2>
+    <label>ชื่อสินค้า: <input type="text" id="productName"></label><br>
+    <label>ราคาสินค้า: <input type="number" id="productPrice"></label><br>
+    <button onclick="calculateVAT()">คำนวณ</button>
+
+    <h3 id="resultVAT"></h3>
+
+</script>
+<script src="test3.js"></script>
+</body>
+</html>
+```
+JavaScript
+        function calculateAverage() {
+            let s1 = parseFloat(document.getElementById("score1").value);
+            let s2 = parseFloat(document.getElementById("score2").value);
+            let s3 = parseFloat(document.getElementById("score3").value);
+            
+            if (!isNaN(s1) && !isNaN(s2) && !isNaN(s3)) {
+                let average = (s1 + s2 + s3) / 3;
+                document.getElementById("result").innerText = `คะแนนเฉลี่ย: ${average.toFixed(2)}`;
+            } else {
+                alert("กรุณากรอกคะแนนให้ครบทุกช่อง");
+            }
+        }
+        function calculateVAT() {
+            let name = document.getElementById("productName").value;
+            let price = parseFloat(document.getElementById("productPrice").value);
+            
+            if (name && !isNaN(price)) {
+                let vat = price * 0.07;
+                let totalPrice = price + vat;
+                document.getElementById("resultVAT").innerHTML = `
+                    <strong>สินค้า:</strong> ${name} <br>
+                    <strong>ราคาสินค้า:</strong> ${price.toFixed(2)} บาท <br>
+                    <strong>VAT (7%):</strong> ${vat.toFixed(2)} บาท <br>
+                    <strong>ราคารวม:</strong> ${totalPrice.toFixed(2)} บาท
+                `;
+            } else {
+                alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+            }
+        }
 ```
 [รูปผลการทดลองที่ 2.2]
+![image](https://github.com/user-attachments/assets/e896f2e6-7216-49d8-a1c0-d40d21e0ac5d)
 
 ### 2.3 การควบคุมการทำงาน
 
