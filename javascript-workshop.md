@@ -119,7 +119,7 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 </body>
 </html>
 ```
-``` JavaScript
+ JavaScript
 function hello3() {
     const now = new Date();
     const timeString = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
