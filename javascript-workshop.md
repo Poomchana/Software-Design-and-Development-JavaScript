@@ -77,42 +77,7 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 ### บันทึกผลการทดลอง 
 ```html
 [บันทึกโค้ด ที่นี่]
-```<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <title>ทดลอง JavaScript</title>
-</head>
-<body>
-    <!-- Inline JavaScript -->
-    <button onclick="alert('นายภูมิชนะ เทียมแก้ว')">แสดงรายชื่อนักศึกษา</button>
-
-    <!-- ทดสอบ Internal JavaScript -->
-    <button id="btn2">แสดงวันที่ปัจจุบัน</button>
-
-    <!-- ทดสอบ External JavaScript -->
-    <button id="btn3" onclick="hello3();">แสดงเวลาปัจจุบัน</button>
-
-    <!-- Internal JavaScript -->
-    <script>
-        document.getElementById('btn2').onclick = function() {
-            const now = new Date();
-            const dateString = now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
-            alert('วันที่'  + dateString);
-        };
-    </script>
-
-    <!-- External JavaScript -->
-  <!-- ต้องสร้างไฟล์ script.js มีโค้ดโปรแกรมในไฟล์ดังนี้
-   function hello3(){
-    alert('คลิกปุ่มที่ 3!');
-    }
- -->
-    
-    <script src="script.js"></script>
-</body>
-</html>
-
+```
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -120,30 +85,54 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
     <title>ทดลอง JavaScript</title>
 </head>
 <body>
-    <br>
-    <br>
-    <!-- ช่องกรอกข้อความสำหรับชื่อ -->
+    <!-- ปุ่มแสดงรายชื่อนักศึกษา -->
+    <button onclick="alert('นายภูมิชนะ เทียมแก้ว')">แสดงรายชื่อนักศึกษา</button>
+
+    <!-- ปุ่มแสดงวันที่ -->
+    <button id="btn2">แสดงวันที่ปัจจุบัน</button>
+
+    <!-- ปุ่มแสดงเวลาปัจจุบัน -->
+    <button id="btn3" onclick="hello3();">แสดงเวลาปัจจุบัน</button>
+
+    <!-- ช่องกรอกข้อความ -->
+    <br><br>
     <label for="nameInput">กรุณากรอกชื่อ: </label>
     <input type="text" id="nameInput" placeholder="กรอกชื่อของคุณ">
-
-    <!-- ปุ่มแสดงข้อความ -->
     <button onclick="showMessage()">แสดงข้อความ</button>
-
     <p id="displayMessage"></p>
 
     <script>
+        // แสดงวันที่ปัจจุบัน
+        document.getElementById('btn2').onclick = function() {
+            const now = new Date();
+            const dateString = now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
+            alert('วันที่ ' + dateString);
+        };
+
+        // แสดงชื่อที่กรอก
         function showMessage() {
             var name = document.getElementById('nameInput').value;
-
             document.getElementById('displayMessage').textContent = "ชื่อของคุณ: " + name;
         }
     </script>
+    <script src="ทดลอง1.js"></script>
 </body>
 </html>
 ```
+``` JavaScript
+function hello3() {
+    const now = new Date();
+    const timeString = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    alert("เวลาปัจจุบัน: " + timeString);
+}
+```
 
 [รูปผลการทดลองที่ 1]
-  ![image](https://github.com/user-attachments/assets/10a60d52-6943-4fa0-a5b2-7ef8351823f3)
+แสดงชื่อนักศึกษา ![image](https://github.com/user-attachments/assets/14c960ca-742b-47c7-9782-e30ec1f075b0)
+แสดงวันที่ปัจจุบัน ![image](https://github.com/user-attachments/assets/98b5b390-f031-4be4-a318-1ee0282cafb8)
+แสดงเวลา ![image](https://github.com/user-attachments/assets/024e9516-ef13-4c3d-a54b-e141da5ce8f1)
+
+ แสดงช่องกรอกข้อความ ![image](https://github.com/user-attachments/assets/10a60d52-6943-4fa0-a5b2-7ef8351823f3)
 
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
