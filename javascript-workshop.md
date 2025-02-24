@@ -322,7 +322,6 @@ number /= 2;          // เท่ากับ number = number / 2
 <script src="test3.js"></script>
 </body>
 </html>
-```
 JavaScript
         function calculateAverage() {
             let s1 = parseFloat(document.getElementById("score1").value);
