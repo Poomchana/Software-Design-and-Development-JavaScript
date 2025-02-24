@@ -128,11 +128,11 @@ function hello3() {
 ```
 
 [รูปผลการทดลองที่ 1]
-แสดงชื่อนักศึกษา ![image](https://github.com/user-attachments/assets/14c960ca-742b-47c7-9782-e30ec1f075b0)
-แสดงวันที่ปัจจุบัน ![image](https://github.com/user-attachments/assets/98b5b390-f031-4be4-a318-1ee0282cafb8)
-แสดงเวลา ![image](https://github.com/user-attachments/assets/024e9516-ef13-4c3d-a54b-e141da5ce8f1)
+### แสดงชื่อนักศึกษา ![image](https://github.com/user-attachments/assets/14c960ca-742b-47c7-9782-e30ec1f075b0)
+### แสดงวันที่ปัจจุบัน ![image](https://github.com/user-attachments/assets/98b5b390-f031-4be4-a318-1ee0282cafb8)
+### แสดงเวลา ![image](https://github.com/user-attachments/assets/024e9516-ef13-4c3d-a54b-e141da5ce8f1)
 
- แสดงช่องกรอกข้อความ ![image](https://github.com/user-attachments/assets/10a60d52-6943-4fa0-a5b2-7ef8351823f3)
+### แสดงช่องกรอกข้อความ ![image](https://github.com/user-attachments/assets/10a60d52-6943-4fa0-a5b2-7ef8351823f3)
 
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
