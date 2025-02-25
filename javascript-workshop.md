@@ -941,8 +941,55 @@ console.log("เลขคู่:", evenNumbers); // [2, 4]
 ### บันทึกผลการทดลอง 3.1
 ```html
 [บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนวณ BMI</title>
+
+<div class="container">
+    <h2>คำนวณค่า BMI</h2>
+    <input type="number" id="weight" placeholder="น้ำหนัก (กก.)">
+    <input type="number" id="height" placeholder="ส่วนสูง (ซม.)">
+    <button id="calculateBtn">คำนวณ BMI</button>
+    <p id="bmiResult" class="result"></p>
+</div>
+
+<script>
+    // ฟังก์ชันคำนวณ BMI (Arrow Function)
+    const calculateBMI = () => {
+        let weight = parseFloat(document.getElementById("weight").value);
+        let height = parseFloat(document.getElementById("height").value);
+
+        // ตรวจสอบว่ามีค่าหรือไม่
+        if (!weight || !height || weight <= 0 || height <= 0) {
+            document.getElementById("bmiResult").innerText = "กรุณากรอกข้อมูลให้ถูกต้อง!";
+            return;
+        }
+
+        // แปลงส่วนสูงจากเซนติเมตรเป็นเมตร
+        height = height / 100;
+
+        let bmi = weight / (height * height);
+        let status = bmi < 18.5 ? "ผอม" :
+                     bmi < 24.9 ? "สมส่วน" :
+                     bmi < 29.9 ? "น้ำหนักเกิน" :
+                                  "อ้วน";
+
+        document.getElementById("bmiResult").innerText = `ค่า BMI ของคุณคือ ${bmi.toFixed(2)} (${status})`;
+    };
+
+    // ทำให้ปุ่มสามารถคลิกได้
+    document.getElementById("calculateBtn").addEventListener("click", calculateBMI);
+</script>
+
+</body>
+</html>
+
 ```
 [รูปผลการทดลองที่ 3.1]
+![image](https://github.com/user-attachments/assets/d84a55fe-adbb-4df7-b7a5-b6d661c29aab)
 
 ## การทดลองที่ 3.2 : การสร้างฟอร์มสำหรับจองห้องพัก
 การสร้างฟอร์มลงทะเบียนเพื่อรวบรวมข้อมูลที่จำเป็นสำหรับการจองห้องพัก
