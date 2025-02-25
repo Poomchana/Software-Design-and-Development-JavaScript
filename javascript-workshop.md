@@ -486,8 +486,86 @@ for (let i = 1; i <= 5; i++) {
 ### บันทึกผลการทดลอง 2.3
 ```html
 [บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบทดสอบที่ 2.3</title>
+</head>
+<body>
+    <h2>ตรวจสอบเลขคู่-เลขคี่</h2>
+    <label>ป้อนตัวเลข: <input type="number" id="number"></label>
+    <button onclick="checkEvenOdd()">ตรวจสอบ</button>
+    <h3 id="result"></h3>
+
+    <h2>ตารางสูตรคูณ</h2>
+    <button onclick="showMultiplication()">แสดงสูตรคูณ</button>
+    <pre id="multiplicationTable"></pre>
+
+    <h2>นับถอยหลังจาก 10 ถึง 1</h2>
+    <button onclick="countDown()">เริ่มนับถอยหลัง</button>
+    <pre id="countdownResult"></pre>
+
+    <h2>ตรวจสอบช่วงวัย</h2>
+    <label>ป้อนอายุ: <input type="number" id="age"></label>
+    <button onclick="checkAge()">ตรวจสอบ</button>
+    <h3 id="ageResult"></h3>
+
+    <script>
+        function checkEvenOdd() {
+            let num = parseInt(document.getElementById("number").value);
+            if (!isNaN(num)) {
+                let result = (num % 2 === 0) ? "เป็นเลขคู่" : "เป็นเลขคี่";
+                document.getElementById("result").innerText = `ผลลัพธ์: ${num} ${result}`;
+            } else {
+                alert("กรุณากรอกตัวเลขที่ถูกต้อง");
+            }
+        }
+        function showMultiplication() {
+            let result = "ตารางสูตรคูณแม่ 2\n";
+            for (let i = 1; i <= 12; i++) {
+                result += `2 x ${i} = ${2 * i}\n`;
+            }
+            result += "\nตารางสูตรคูณแม่ 3\n";
+            let j = 1;
+            while (j <= 12) {
+                result += `3 x ${j} = ${3 * j}\n`;
+                j++;
+            }
+            document.getElementById("multiplicationTable").innerText = result;
+        }
+        function countDown() {
+            let result = "";
+            for (let i = 10; i >= 1; i--) {
+                result += i + "\n";
+            }
+            document.getElementById("countdownResult").innerText = result;
+        }
+        function checkAge() {
+            let age = parseInt(document.getElementById("age").value);
+            let message = "";
+            if (!isNaN(age)) {
+                if (age >= 0 && age <= 12) {
+                    message = "วัยเด็ก";
+                } else if (age >= 13 && age <= 20) {
+                    message = "วัยรุ่น";
+                } else if (age >= 21) {
+                    message = "วัยผู้ใหญ่";
+                } else {
+                    message = "กรุณากรอกอายุที่ถูกต้อง";
+                }
+                document.getElementById("ageResult").innerText = `คุณอยู่ในช่วง: ${message}`;
+            } else {
+                alert("กรุณากรอกอายุให้ถูกต้อง");
+            }
+        }
+    </script>
+</body>
+</html>
 ```
 [รูปผลการทดลองที่ 2.3]
+![image](https://github.com/user-attachments/assets/868029a9-d2d1-470d-a5ca-a2d2bfdcbf3d)
 
 ### 2.4 Functions และ Arrow Functions
 
